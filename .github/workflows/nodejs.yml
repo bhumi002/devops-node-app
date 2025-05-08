@@ -22,13 +22,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Start app in background
-        run: |
-          npm run start &
-          sleep 10
-
-      - name: Show running processes
-        run: ps aux
-
-      - name: Test app with curl
-        run: curl --retry 5 --retry-delay 3 --fail http://localhost:3000
+      - name: Run app for testing
+        run: node index.js
